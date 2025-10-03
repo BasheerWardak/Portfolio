@@ -27,80 +27,32 @@
     <link rel="stylesheet" href="./css/responsive.css">
 
     <style>
-        .text-center {
-            text-align: center;
-        }
-        .project-area .our-project {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .project-area .our-project .img {
-            width: 100%;
-            height: auto;
-        }
-        .project-area .our-project .title {
-            text-align: center;
-        }
+        .text-center { text-align: center; }
+        .project-area .our-project { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .project-area .our-project .img { width: 100%; height: auto; }
+        .project-area .our-project .title { text-align: center; }
+
+        /* Dark mode toggle */
         .dark-mode-toggle {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 60px;
-            height: 30px;
-            background-color: #333;
-            border-radius: 30px;
-            cursor: pointer;
-            position: relative;
-            transition: background-color 0.3s;
+            display: flex; align-items: center; justify-content: space-between;
+            width: 60px; height: 30px; background-color: #333; border-radius: 30px;
+            cursor: pointer; position: relative; transition: background-color 0.3s;
             padding: 5px;
         }
         .dark-mode-toggle .toggle-icon {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: #ffffff;
-            border-radius: 50%;
+            position: absolute; width: 20px; height: 20px;
+            background-color: #ffffff; border-radius: 50%;
             transition: transform 0.3s;
         }
-        .dark-mode-toggle .fa-sun {
-            color: #f39c12;
-        }
-        .dark-mode-toggle .fa-moon {
-            color: #e89f39;
-        }
-        body.dark-mode .dark-mode-toggle {
-            background-color: #fffdfd;
-        }
-        body.dark-mode .dark-mode-toggle .toggle-icon {
-            transform: translateX(32px);
-            background-color: #000000;
-        }
-        body.dark-mode .dark-mode-toggle .fa-sun {
-            color: #f57d05;
-        }
-        body.dark-mode .dark-mode-toggle .fa-moon {
-            color: #333;
-        }
-        body.dark-mode {
-            --primary-bg: #121212;
-            --primary-text: #ffffff;
-            --secondary-bg: #1e1e1e;
-        }
-        body {
-            background-color: var(--primary-bg, #ffffff);
-            color: var(--primary-text, #000000);
-            transition: background-color 0.5s, color 0.5s;
-        }
-        body.dark-mode .navbar,
-        body.dark-mode .footer-area {
-            background-color: var(--secondary-bg);
-        }
-        body.dark-mode .navbar a,
-        body.dark-mode .footer-area .para,
-        body.dark-mode .footer-area .social a,
-        body.dark-mode .footer-area .copyrights a {
+        .dark-mode-toggle .fa-sun { color: #f39c12; }
+        .dark-mode-toggle .fa-moon { color: #e89f39; }
+        body.dark-mode .dark-mode-toggle { background-color: #fffdfd; }
+        body.dark-mode .dark-mode-toggle .toggle-icon { transform: translateX(32px); background-color: #000000; }
+        body.dark-mode { --primary-bg: #121212; --primary-text: #ffffff; --secondary-bg: #1e1e1e; }
+        body { background-color: var(--primary-bg, #ffffff); color: var(--primary-text, #000000); transition: background-color 0.5s, color 0.5s; }
+        body.dark-mode .navbar, body.dark-mode .footer-area { background-color: var(--secondary-bg); }
+        body.dark-mode .navbar a, body.dark-mode .footer-area .para,
+        body.dark-mode .footer-area .social a, body.dark-mode .footer-area .copyrights a {
             color: var(--primary-text) !important;
         }
     </style>
@@ -119,15 +71,13 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <div class="mr-auto"></div>
                     <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="#">about</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">pages</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">blog</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">contact</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Pages</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                         <li class="nav-item">
                             <div id="dark-mode-toggle" class="dark-mode-toggle">
                                 <i class="fas fa-sun"></i>
@@ -154,13 +104,15 @@
                         <h4 class="title-text text-uppercase">Computer Science & Math Minor Student</h4>
                         <div class="site-buttons">
                             <div class="d-flex flex-row flex-wrap">
-                                <button type="button" class="btn button primary-button mr-4 text-uppercase">Hire Me</button>
-                                <a href="./docs/Basheer_Wardak_Resume.pdf" download="Basheer_Wardak_Resume.pdf" class="btn button secondary-button text-uppercase">Get My Resume</a>
+                                <!-- Hire me scrolls to about section -->
+                                <a href="#about" class="btn button primary-button mr-4 text-uppercase">Hire Me</a>
+                                <!-- Get My Resume scrolls to download button in about section -->
+                                <a href="#resume" class="btn button secondary-button text-uppercase">Get My Resume</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12 banner-image">
-                        <img src="./img/banner/banner-image.png" alt="Basheer Wardak, Computer Science & Math Minor" class="img-fluid" loading="lazy">
+                        <img src="./img/banner/banner-image.png" alt="Basheer Wardak, Computer Science & Math Minor" class="img-fluid" loading="lazy" />
                     </div>
                 </div>
             </div>
@@ -168,7 +120,7 @@
         <!--  ======================= End Banner Area =======================  -->
 
         <!--  ========================= About Area ==========================  -->
-        <section class="about-area">
+        <section id="about" class="about-area">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-6 col-md-12">
@@ -192,7 +144,10 @@
                                 Whether it’s optimizing business processes, analyzing data, or securing systems, I am always eager to learn and grow.
                             </p>
                         </div>
-                        <a href="./docs/Basheer_Wardak_Resume.pdf" download="Basheer_Wardak_Resume.pdf" class="btn button primary-button text-uppercase">Download Resume</a>
+                        <!-- Download Resume button -->
+                        <a id="resume" href="./Docs/Basheer_Wardak_Resume.pdf" download="Basheer_Wardak_Resume.pdf" class="btn button primary-button text-uppercase">
+                            Download Resume
+                        </a>
                     </div>
                 </div>
             </div>
@@ -206,7 +161,6 @@
                     <h1 class="text-uppercase title-h1">Projects</h1>
                     <h1 class="text-uppercase title-h1">Coming Soon...</h1>
                 </div>
-
                 <div class="row grid justify-content-center">
                     <div class="col-lg-4 col-md-6 col-sm-12 element-item latest">
                         <div class="our-project">
@@ -243,7 +197,6 @@
         </section>
         <!--  ======================= End Project Area =============================  -->
     </main>
-    <!--  ======================= End Main Area ================================ -->
 
     <!--  ======================= Start Footer Area ================================ -->
     <footer class="footer-area">
@@ -270,20 +223,10 @@
 
     <!--  Jquery js file  -->
     <script src="./js/jquery.3.4.1.js"></script>
-
-    <!--  Bootstrap js file  -->
     <script src="./js/bootstrap.min.js"></script>
-
-    <!--  isotope js library  -->
     <script src="./vendor/isotope/isotope.min.js"></script>
-
-    <!--  Magnific popup script file  -->
     <script src="./vendor/Magnific-Popup/dist/jquery.magnific-popup.min.js"></script>
-
-    <!--  Owl-carousel js file  -->
     <script src="./vendor/owl-carousel/js/owl.carousel.min.js"></script>
-
-    <!--  custom js file  -->
     <script src="./js/main.js"></script>
 
     <script>
@@ -309,5 +252,4 @@
         document.getElementById('dark-mode-toggle').addEventListener('click', toggleDarkMode);
     </script>
 </body>
-
 </html>
